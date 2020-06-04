@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sitebuboWebApp"
+    }
+  },
+  "defaultProject": "sitebuboWebApp",
+  "cli": {
+    "analytics": "423d3bdb-eadc-493f-bdb4-d6a83378ffb8"
+  }
 }
