@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopbarComponent } from './topbar.component';
+import { SeoScoreComponent } from './seo-score.component';
 
-describe('TopbarComponent', () => {
-  let component: TopbarComponent;
-  let fixture: ComponentFixture<TopbarComponent>;
+describe('SeoScoreComponent', () => {
+  let component: SeoScoreComponent;
+  let fixture: ComponentFixture<SeoScoreComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopbarComponent ]
+      declarations: [ SeoScoreComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopbarComponent);
+    fixture = TestBed.createComponent(SeoScoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
