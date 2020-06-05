@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesktopSpeedComponent } from './desktop-speed.component';
+import { EserverMonitorComponent } from './eserver-monitor.component';
 
-describe('DesktopSpeedComponent', () => {
-  let component: DesktopSpeedComponent;
-  let fixture: ComponentFixture<DesktopSpeedComponent>;
+describe('EserverMonitorComponent', () => {
+  let component: EserverMonitorComponent;
+  let fixture: ComponentFixture<EserverMonitorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DesktopSpeedComponent ]
+      declarations: [ EserverMonitorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DesktopSpeedComponent);
+    fixture = TestBed.createComponent(EserverMonitorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

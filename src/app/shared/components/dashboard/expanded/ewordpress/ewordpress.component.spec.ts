@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UptimeComponent } from './uptime.component';
+import { EwordpressComponent } from './ewordpress.component';
 
-describe('UptimeComponent', () => {
-  let component: UptimeComponent;
-  let fixture: ComponentFixture<UptimeComponent>;
+describe('EwordpressComponent', () => {
+  let component: EwordpressComponent;
+  let fixture: ComponentFixture<EwordpressComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UptimeComponent ]
+      declarations: [ EwordpressComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UptimeComponent);
+    fixture = TestBed.createComponent(EwordpressComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

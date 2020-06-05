@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConverstationRateComponent } from './converstation-rate.component';
+import { EuptimeComponent } from './euptime.component';
 
-describe('ConverstationRateComponent', () => {
-  let component: ConverstationRateComponent;
-  let fixture: ComponentFixture<ConverstationRateComponent>;
+describe('EuptimeComponent', () => {
+  let component: EuptimeComponent;
+  let fixture: ComponentFixture<EuptimeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConverstationRateComponent ]
+      declarations: [ EuptimeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConverstationRateComponent);
+    fixture = TestBed.createComponent(EuptimeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
