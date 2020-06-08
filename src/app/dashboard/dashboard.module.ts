@@ -26,7 +26,6 @@ import { MsiteSpeedComponent } from './../shared/components/dashboard/minimized/
 import { MdomainExpireComponent } from './../shared/components/dashboard/minimized/mdomain-expire/mdomain-expire.component';
 import { MseoScoreComponent } from './../shared/components/dashboard/minimized/mseo-score/mseo-score.component';
 
-import { GridsterModule } from 'angular-gridster2';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -52,7 +51,6 @@ import { GridsterModule } from 'angular-gridster2';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    GridsterModule,
     ButtonsModule
   ]
 })

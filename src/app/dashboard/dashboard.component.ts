@@ -27,15 +27,16 @@ import { MseoScoreComponent } from './../shared/components/dashboard/minimized/m
 })
 export class DashboardComponent implements OnInit {
   expandedItems = [
-    EseoScoreComponent,
-    EwordpressComponent,
-    EdesktopSpeedComponent,
-    EmalwareCheckComponent,
-    EconversionRateComponent,
-    EserverMonitorComponent,
-    EuptimeComponent
-  ];
+    { index: 0, component: EuptimeComponent },
+    { index: 1, component: EseoScoreComponent },
+    { index: 2, component: EwordpressComponent },
+    { index: 3, component: EdesktopSpeedComponent },
+    { index: 4, component: EmalwareCheckComponent },
+    { index: 5, component: EconversionRateComponent },
+    { index: 6, component: EserverMonitorComponent }
+  ]
   minimizedItems = [
+    MseoScoreComponent,
     MemailCheckComponent,
     MvisitorsComponent,
     MconversionRateComponent,
@@ -44,8 +45,7 @@ export class DashboardComponent implements OnInit {
     MrankCheckComponent,
     MfullReportComponent,
     MsiteSpeedComponent,
-    MdomainExpireComponent,
-    MseoScoreComponent
+    MdomainExpireComponent
   ];
   constructor() { }
   ngOnInit(): void {
