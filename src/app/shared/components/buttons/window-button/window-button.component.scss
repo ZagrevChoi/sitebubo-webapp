@@ -1,0 +1,19 @@
+.img-wrapper{
+    position: relative;
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    img {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        &:hover {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: 2px solid #5e849d; // Niagara
+            border-radius: 6px;
+        }
+        }
+}

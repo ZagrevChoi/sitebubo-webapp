@@ -1,3 +1,4 @@
+import { ButtonsModule } from './../shared/components/buttons/buttons.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -46,12 +47,13 @@ import { GridsterModule } from 'angular-gridster2';
     MfullReportComponent,
     MsiteSpeedComponent,
     MdomainExpireComponent,
-    MseoScoreComponent
+    MseoScoreComponent,
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    GridsterModule
+    GridsterModule,
+    ButtonsModule
   ]
 })
 export class DashboardModule { }

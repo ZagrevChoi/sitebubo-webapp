@@ -12,4 +12,15 @@ export class EuptimeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClose() {
+    alert('close button pressed');
+  }
+
+  onMinimize() {
+    alert('minimize button pressed');
+  }
+
+  onExpand() {
+    alert('expand button pressed');
+  }
 }

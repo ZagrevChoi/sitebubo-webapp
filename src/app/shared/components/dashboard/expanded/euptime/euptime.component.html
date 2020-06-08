@@ -1,17 +1,11 @@
 <div class="card">
+    <div class="btn-toolbar slide-in-bottom">
+        <app-window-button class="mr-2" icon="close" (click)="onClose()"></app-window-button>
+        <app-window-button class="mr-2" icon="minimize" (click)="onMinimize()"></app-window-button>
+        <app-window-button icon="expand" (click)="onExpand()"></app-window-button>
+    </div> 
     <div class="card-header">
-        <div class="btn-toolbar slide-in-bottom">
-            <a class="cursor-pointer mr-2">
-                <span><img src="assets/icons/btn-close.png"></span>
-            </a>
-            <a class="cursor-pointer mr-2">
-                <span><img src="assets/icons/btn-minimize.png"></span>
-            </a>
-            <a class="cursor-pointer">
-                <span><img src="assets/icons/btn-expand.png"></span>
-            </a>
-        </div> 
-            Card Header
+        Card Header
     </div>
     <div class="card-body">
         Card Body
