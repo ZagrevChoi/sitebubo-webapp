@@ -19,7 +19,7 @@ import { MsiteSpeedComponent } from './../shared/components/dashboard/minimized/
 import { MdomainExpireComponent } from './../shared/components/dashboard/minimized/mdomain-expire/mdomain-expire.component';
 import { MseoScoreComponent } from './../shared/components/dashboard/minimized/mseo-score/mseo-score.component';
 
-
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -34,21 +34,28 @@ export class DashboardComponent implements OnInit {
     { index: 4, component: EmalwareCheckComponent },
     { index: 5, component: EconversionRateComponent },
     { index: 6, component: EserverMonitorComponent }
-  ]
+  ];
   minimizedItems = [
-    MseoScoreComponent,
-    MemailCheckComponent,
-    MvisitorsComponent,
-    MconversionRateComponent,
-    MmobileFriendlyComponent,
-    MwordpressComponent,
-    MrankCheckComponent,
-    MfullReportComponent,
-    MsiteSpeedComponent,
-    MdomainExpireComponent
+    { index: 0, component: MseoScoreComponent },
+    { index: 1, component: MemailCheckComponent },
+    { index: 2, component: MvisitorsComponent },
+    { index: 3, component: MconversionRateComponent },
+    { index: 4, component: MmobileFriendlyComponent },
+    { index: 5, component: MfullReportComponent },
+    { index: 6, component: MsiteSpeedComponent },
+    { index: 7, component: MdomainExpireComponent }
   ];
   constructor() { }
+
   ngOnInit(): void {
+
   }
 
+  drop(event: CdkDragDrop<string[]>, target: string) {
+    if (target === 'minimize') {
+      moveItemInArray(this.minimizedItems, event.previousIndex, event.currentIndex);
+    } else {
+      moveItemInArray(this.expandedItems, event.previousIndex, event.currentIndex);
+    }
+  }
 }

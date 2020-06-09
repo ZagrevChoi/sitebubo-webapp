@@ -26,6 +26,7 @@ import { MsiteSpeedComponent } from './../shared/components/dashboard/minimized/
 import { MdomainExpireComponent } from './../shared/components/dashboard/minimized/mdomain-expire/mdomain-expire.component';
 import { MseoScoreComponent } from './../shared/components/dashboard/minimized/mseo-score/mseo-score.component';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -46,12 +47,13 @@ import { MseoScoreComponent } from './../shared/components/dashboard/minimized/m
     MfullReportComponent,
     MsiteSpeedComponent,
     MdomainExpireComponent,
-    MseoScoreComponent,
+    MseoScoreComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ButtonsModule
+    ButtonsModule,
+    DragDropModule
   ]
 })
 export class DashboardModule { }

@@ -2,8 +2,8 @@
     <p>My sites(1/3)</p>
 </div>
 <div class="row mx-0 main-contents pt-5">
-    <div class="col-md-8 col-sm-12">
-        <div class="col-md-12 flex-center mb-5" *ngFor="let item of expandedItems">
+    <div class="col-md-8 col-sm-12" cdkDropList (cdkDropListDropped)="drop($event, 'expand')">
+        <div class="col-md-12 flex-center mb-5" *ngFor="let item of expandedItems" cdkDrag>
             <ng-container *ngComponentOutlet="item.component"></ng-container>
         </div>
     </div>
@@ -16,9 +16,9 @@
                 <app-mseo-score></app-mseo-score>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 flex-center mb-4" *ngFor="let item of minimizedItems">
-                <ng-container *ngComponentOutlet="item"></ng-container>
+        <div class="row" cdkDropList (cdkDropListDropped)="drop($event, 'minimize')">
+            <div class="col-md-12 flex-center mb-4" *ngFor="let item of minimizedItems" cdkDrag>
+                <ng-container *ngComponentOutlet="item.component"></ng-container>
             </div>
         </div>
     </div>
