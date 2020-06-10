@@ -28,7 +28,7 @@ import { MseoScoreComponent } from './../shared/components/dashboard/minimized/m
 })
 export class DashboardComponent implements OnInit {
   @ViewChild('fullExpandedItem', { static: false }) fullExpandedItem: ElementRef<any>;
-
+  @ViewChild('mainContentArea', { static: false }) mainContentArea: ElementRef<any>;
   expandedItems = [
     { index: 5, component: EconversionRateComponent },
     { index: 0, component: EuptimeComponent },

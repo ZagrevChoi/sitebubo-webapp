@@ -4,13 +4,11 @@
 </div>
 <!-- Full width, height expanded component -->
 <div class="expanded-full scale-in-center" *ngIf="expandSelected" #fullExpandedItem>
-        <div class="btn-toolbar slide-in-bottom">
-            <app-window-button icon="close" (click)="closeExpanded()"></app-window-button>
-        </div>
-        <ng-container *ngComponentOutlet="expandSelected"></ng-container>
+    <app-window-button icon="close" (click)="closeExpanded()"></app-window-button>
+    <ng-container *ngComponentOutlet="expandSelected"></ng-container>
 </div>
 <!-- main monitors list part -->
-<div class="row mx-0 main-contents pt-5" *ngIf="!expandSelected">
+<div class="row mx-0 main-contents pt-5" *ngIf="!expandSelected" #mainContentArea>
     <!-- expanded components -->
     <div class="col-md-8 col-sm-12" cdkDropList (cdkDropListDropped)="drop($event, 'expand')">
         <div class="row">
