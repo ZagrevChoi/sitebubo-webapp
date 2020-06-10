@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 // expanded components
 import { EseoScoreComponent } from './../shared/components/dashboard/expanded/eseo-score/eseo-score.component';
 import { EwordpressComponent } from './../shared/components/dashboard/expanded/ewordpress/ewordpress.component';
@@ -19,20 +20,22 @@ import { MsiteSpeedComponent } from './../shared/components/dashboard/minimized/
 import { MdomainExpireComponent } from './../shared/components/dashboard/minimized/mdomain-expire/mdomain-expire.component';
 import { MseoScoreComponent } from './../shared/components/dashboard/minimized/mseo-score/mseo-score.component';
 
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  @ViewChild('fullExpandedItem', { static: false }) fullExpandedItem: ElementRef<any>;
+
   expandedItems = [
+    { index: 5, component: EconversionRateComponent },
     { index: 0, component: EuptimeComponent },
     { index: 1, component: EseoScoreComponent },
     { index: 2, component: EwordpressComponent },
     { index: 3, component: EdesktopSpeedComponent },
     { index: 4, component: EmalwareCheckComponent },
-    { index: 5, component: EconversionRateComponent },
     { index: 6, component: EserverMonitorComponent }
   ];
   minimizedItems = [
@@ -45,6 +48,8 @@ export class DashboardComponent implements OnInit {
     { index: 6, component: MsiteSpeedComponent },
     { index: 7, component: MdomainExpireComponent }
   ];
+
+  expandSelected: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -57,5 +62,21 @@ export class DashboardComponent implements OnInit {
     } else {
       moveItemInArray(this.expandedItems, event.previousIndex, event.currentIndex);
     }
+  }
+
+  maximizeItem(componentItem) {
+    this.expandSelected = componentItem;
+  }
+
+  closeExpanded() {
+    this.expandSelected = null;
+  }
+
+  removeExpanded() {
+
+  }
+
+  minimizeExpanded() {
+
   }
 }

@@ -1,5 +1,4 @@
-.card {
-    box-shadow:  0px 0px 5px 0px #707070 !important;
+.card-item {
     .btn-toolbar {
         display: none;
     }
@@ -8,6 +7,10 @@
             display: block;
         }
     }
+} 
+
+.card {
+    box-shadow:  0px 0px 5px 0px #707070 !important;
 }
 .card-header {
     background-color: #F6F7FB !important;

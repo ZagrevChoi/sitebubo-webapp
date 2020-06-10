@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-econversion-rate',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./econversion-rate.component.scss']
 })
 export class EconversionRateComponent implements OnInit {
+
+  @Output() expand = new EventEmitter<any>();
 
   constructor() { }
 
@@ -21,6 +23,6 @@ export class EconversionRateComponent implements OnInit {
   }
 
   onExpand() {
-    alert('expand button pressed');
+    this.expand.emit(null);
   }
 }

@@ -1,12 +1,31 @@
+<!-- dashboard options filtering -->
 <div class="options">
     <p>My sites(1/3)</p>
 </div>
-<div class="row mx-0 main-contents pt-5">
+<!-- Full width, height expanded component -->
+<div class="expanded-full scale-in-center" *ngIf="expandSelected" #fullExpandedItem>
+        <div class="btn-toolbar slide-in-bottom">
+            <app-window-button icon="close" (click)="closeExpanded()"></app-window-button>
+        </div>
+        <ng-container *ngComponentOutlet="expandSelected"></ng-container>
+</div>
+<!-- main monitors list part -->
+<div class="row mx-0 main-contents pt-5" *ngIf="!expandSelected">
+    <!-- expanded components -->
     <div class="col-md-8 col-sm-12" cdkDropList (cdkDropListDropped)="drop($event, 'expand')">
-        <div class="col-md-12 flex-center mb-5" *ngFor="let item of expandedItems" cdkDrag>
-            <ng-container *ngComponentOutlet="item.component"></ng-container>
+        <div class="row">
+            <div class="col-md-12 flex-center mb-5 card-item" *ngFor="let item of expandedItems" cdkDrag >
+                <div class="btn-toolbar slide-in-bottom">
+                    <app-window-button class="mr-2" icon="close" (click)="removeExpanded()"></app-window-button>
+                    <app-window-button class="mr-2" icon="minimize" (click)="minimizeExpanded()"></app-window-button>
+                    <app-window-button icon="expand" (click)="maximizeItem(item.component)"></app-window-button>
+                </div>
+                <ng-container *ngComponentOutlet="item.component">
+                </ng-container>
+            </div>
         </div>
     </div>
+    <!-- minimized components -->
     <div class="col-md-4 col-sm-12">
         <div class="row mb-4">
             <div class="col-md-6 col-sm-6">
@@ -17,7 +36,11 @@
             </div>
         </div>
         <div class="row" cdkDropList (cdkDropListDropped)="drop($event, 'minimize')">
-            <div class="col-md-12 flex-center mb-4" *ngFor="let item of minimizedItems" cdkDrag>
+            <div class="col-md-12 flex-center mb-4 card-item" *ngFor="let item of minimizedItems" cdkDrag>
+                <div class="btn-toolbar slide-in-bottom">
+                    <app-window-button class="mr-2" icon="close"></app-window-button>
+                    <app-window-button icon="expand"></app-window-button>
+                </div>
                 <ng-container *ngComponentOutlet="item.component"></ng-container>
             </div>
         </div>
