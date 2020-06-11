@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EserverMonitorComponent } from './eserver-monitor.component';
+import { MuptimeComponent } from './muptime.component';
 
-describe('EserverMonitorComponent', () => {
-  let component: EserverMonitorComponent;
-  let fixture: ComponentFixture<EserverMonitorComponent>;
+describe('MuptimeComponent', () => {
+  let component: MuptimeComponent;
+  let fixture: ComponentFixture<MuptimeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EserverMonitorComponent ]
+      declarations: [ MuptimeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EserverMonitorComponent);
+    fixture = TestBed.createComponent(MuptimeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

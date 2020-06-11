@@ -22,7 +22,7 @@ export class EconversionRateComponent implements OnInit {
     alert('minimize button pressed');
   }
 
-  onExpand() {
+  maximizeItem() {
     this.expand.emit(null);
   }
 }
