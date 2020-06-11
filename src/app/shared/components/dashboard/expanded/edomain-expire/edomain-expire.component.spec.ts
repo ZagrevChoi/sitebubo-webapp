@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MmobileFriendlyComponent } from './mmobile-friendly.component';
+import { EdomainExpireComponent } from './edomain-expire.component';
 
-describe('MmobileFriendlyComponent', () => {
-  let component: MmobileFriendlyComponent;
-  let fixture: ComponentFixture<MmobileFriendlyComponent>;
+describe('EdomainExpireComponent', () => {
+  let component: EdomainExpireComponent;
+  let fixture: ComponentFixture<EdomainExpireComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MmobileFriendlyComponent ]
+      declarations: [ EdomainExpireComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MmobileFriendlyComponent);
+    fixture = TestBed.createComponent(EdomainExpireComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

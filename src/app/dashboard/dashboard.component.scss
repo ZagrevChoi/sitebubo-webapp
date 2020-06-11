@@ -9,7 +9,15 @@
     width: 100%;
     height: calc(100% - 160px);
     padding: 20px;
-    .card {
-        height: 100% !important;
+    .minimize-button {
+        z-index: 2;
+        right: 20px;
+        top: 10px
+    }
+    .expanded-area {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 }

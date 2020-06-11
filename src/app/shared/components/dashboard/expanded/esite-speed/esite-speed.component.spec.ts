@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MemailCheckComponent } from './memail-check.component';
+import { EsiteSpeedComponent } from './esite-speed.component';
 
-describe('MemailCheckComponent', () => {
-  let component: MemailCheckComponent;
-  let fixture: ComponentFixture<MemailCheckComponent>;
+describe('EsiteSpeedComponent', () => {
+  let component: EsiteSpeedComponent;
+  let fixture: ComponentFixture<EsiteSpeedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MemailCheckComponent ]
+      declarations: [ EsiteSpeedComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MemailCheckComponent);
+    fixture = TestBed.createComponent(EsiteSpeedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
