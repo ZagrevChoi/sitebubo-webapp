@@ -7,6 +7,7 @@ import { MseoScoreComponent } from './mseo-score/mseo-score.component';
 import { MsiteSpeedComponent } from './msite-speed/msite-speed.component';
 import { MuptimeComponent } from './muptime/muptime.component';
 import { MwordpressComponent } from './mwordpress/mwordpress.component';
+import { MfullReportComponent } from './mfull-report/mfull-report.component';
 
 
 
@@ -18,7 +19,8 @@ import { MwordpressComponent } from './mwordpress/mwordpress.component';
     MseoScoreComponent,
     MsiteSpeedComponent,
     MuptimeComponent,
-    MwordpressComponent
+    MwordpressComponent,
+    MfullReportComponent
   ],
   imports: [
     CommonModule
@@ -30,7 +32,8 @@ import { MwordpressComponent } from './mwordpress/mwordpress.component';
     MseoScoreComponent,
     MsiteSpeedComponent,
     MuptimeComponent,
-    MwordpressComponent
+    MwordpressComponent,
+    MfullReportComponent
   ]
 })
 export class MinimizedModule { }

@@ -52,7 +52,7 @@
         <div class="row">
             <ng-container *ngFor="let item of expandedItemsFromBackend; let i = index">
                 <div class="col-md-12 flex-center mb-5 card-item" cdkDrag id="exp_{{i}}">
-                    <div class="btn-toolbar slide-in-bottom">
+                    <div class="btn-toolbar slide-in-bottom header-expanded">
                         <app-window-button class="mr-2" icon="minimize" (click)="transferElement(i, item, 1)"></app-window-button>
                         <app-window-button icon="expand" (click)="maximizeItem(item)"></app-window-button>
                     </div>
@@ -97,8 +97,8 @@
                 <app-mmalware-check></app-mmalware-check>
             </div>
             <ng-container *ngFor="let item of minimizedItemsFromBackend; let i = index"> 
-                <div class="col-md-12 flex-center mb-4 card-item"  cdkDrag id="mini_{{i}}" >
-                    <div class="btn-toolbar slide-in-bottom">
+                <div class="col-md-12 flex-center mb-4 card-item" cdkDrag id="mini_{{i}}" >
+                    <div class="btn-toolbar slide-in-bottom" [class]="item">
                         <app-window-button class="mr-2" icon="close" (click)="removeItem(i)"></app-window-button>
                         <app-window-button icon="expand" (click)="transferElement(i, item, 2)"></app-window-button>
                     </div>
@@ -116,6 +116,9 @@
                     </ng-template>
                     <ng-template [ngIf]="item === 'wordpress'">
                         <app-mwordpress></app-mwordpress>
+                    </ng-template>
+                    <ng-template [ngIf]="item === 'full-report'">
+                        <app-mfull-report></app-mfull-report>
                     </ng-template>
                 </div>
             </ng-container>
