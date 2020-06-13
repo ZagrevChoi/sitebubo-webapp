@@ -1,0 +1,9 @@
+$fonts: 30;
+@mixin font-array {
+  @for $i from 10 through $fonts {
+        .font-#{$i} { 
+          font-size:  #{ $i }px;
+        }
+  }
+}
+@include font-array;
