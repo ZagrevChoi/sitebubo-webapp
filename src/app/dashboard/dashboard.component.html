@@ -1,5 +1,20 @@
-<div class="options">
-    <p>My sites(1/3)</p>
+<div class="options p-2">
+        <p class="white">
+            My sites(1/3)
+        </p>
+        <div class="card m-4 align-items-center justify-content-md-between pl-2 pr-2 flex flex-row">
+            <ng-select [items]="domains" [hideSelected]="true" [(ngModel)]="selectDomain" class="custom-ngselect" [clearable]="false" [searchable]="true" (change)="test($event)"></ng-select>
+            <img src="assets/icons/addbutton.png" alt="" class="size-20">
+        </div>
+        <div class="card m-4 align-items-center flex flex-row text-center justify-content-md-around">
+            <img src="assets/icons/monitor.png" alt="">
+            <div>Add Monitor</div>
+            <img src="assets/icons/addbutton.png" alt="" class="size-20 mr-2">
+        </div>
+        <div class="card m-4 align-items-center flex flex-row justify-content-md-around">
+            <img src="assets/icons/members.png" alt="">
+            <div>Manage Members</div>
+        </div>
 </div>
 <!-- Full width, height expanded component -->
 <div class="expanded-full scale-in-center" *ngIf="expandSelected" #fullExpandedItem>
@@ -38,7 +53,6 @@
             <ng-container *ngFor="let item of expandedItemsFromBackend; let i = index">
                 <div class="col-md-12 flex-center mb-5 card-item" cdkDrag id="exp_{{i}}">
                     <div class="btn-toolbar slide-in-bottom">
-                        <app-window-button class="mr-2" icon="close" (click)="removeItem(i, 1)"></app-window-button>
                         <app-window-button class="mr-2" icon="minimize" (click)="transferElement(i, item, 1)"></app-window-button>
                         <app-window-button icon="expand" (click)="maximizeItem(item)"></app-window-button>
                     </div>
@@ -70,23 +84,29 @@
     <!-- minimized components -->
     <div class="col-md-4 col-sm-12">
         <div class="row" cdkDropList (cdkDropListDropped)="drop($event, 'minimize')">
+            <div class="col-md-6 flex-center mb-4 card-item">
+                <div class="btn-toolbar slide-in-bottom">
+                    <app-window-button icon="expand" (click)="transferElement(null, 'uptime', 2)"></app-window-button>
+                </div>
+                <app-muptime></app-muptime>
+            </div>
+            <div class="col-md-6 flex-center mb-4 card-item">
+                <div class="btn-toolbar slide-in-bottom">
+                    <app-window-button icon="expand" (click)="transferElement(null, 'malware-check', 2)"></app-window-button>
+                </div>
+                <app-mmalware-check></app-mmalware-check>
+            </div>
             <ng-container *ngFor="let item of minimizedItemsFromBackend; let i = index"> 
                 <div class="col-md-12 flex-center mb-4 card-item"  cdkDrag id="mini_{{i}}" >
                     <div class="btn-toolbar slide-in-bottom">
-                        <app-window-button class="mr-2" icon="close" (click)="removeItem(i, 2)"></app-window-button>
+                        <app-window-button class="mr-2" icon="close" (click)="removeItem(i)"></app-window-button>
                         <app-window-button icon="expand" (click)="transferElement(i, item, 2)"></app-window-button>
                     </div>
                     <ng-template [ngIf]="item === 'conversion-rate'">
                         <app-mconversion-rate></app-mconversion-rate>
                     </ng-template>
-                    <ng-template [ngIf]="item === 'malware-check'">
-                        <app-mmalware-check></app-mmalware-check>
-                    </ng-template>
                     <ng-template [ngIf]="item === 'site-speed'">
                         <app-msite-speed></app-msite-speed>
-                    </ng-template>
-                    <ng-template [ngIf]="item === 'uptime'">
-                        <app-muptime></app-muptime>
                     </ng-template>
                     <ng-template [ngIf]="item === 'seo-score'">
                         <app-mseo-score></app-mseo-score>
