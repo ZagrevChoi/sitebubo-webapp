@@ -8,8 +8,7 @@ import { EsiteSpeedComponent } from './esite-speed/esite-speed.component';
 import { EuptimeComponent } from './euptime/euptime.component';
 import { EwordpressComponent } from './ewordpress/ewordpress.component';
 import { ButtonsModule } from '../../buttons/buttons.module';
-
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
     EconversionRateComponent,
@@ -22,7 +21,9 @@ import { ButtonsModule } from '../../buttons/buttons.module';
   ],
   imports: [
     CommonModule,
-    ButtonsModule
+    ButtonsModule,
+    NgxChartsModule,
+    // BrowserAnimationsModule
   ],
   exports: [
     EconversionRateComponent,

@@ -6,10 +6,14 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  @ViewChild('fullExpandedItem', { static: false }) fullExpandedItem: ElementRef<any>;
-  @ViewChild('mainContentArea', { static: false }) mainContentArea: ElementRef<any>;
+
+
+  domains = [
+    'justgetvisible.com', 'sitebubo.com', 'youtube.com'
+  ]
+  selectDomain = 'justgetvisible.com';
   minimizedItemsFromBackend = [
-    'uptime', 'seo-score', 'domain-expire' ,'wordpress'
+    'seo-score', 'domain-expire', 'full-report' ,'wordpress','conversion-rate', 'site-speed'
   ];
   expandedItemsFromBackend = [
     'conversion-rate', 'malware-check', 'site-speed',
@@ -39,18 +43,11 @@ export class DashboardComponent implements OnInit {
     this.expandSelected = null;
   }
 
-  removeItem(index, filter) {
-    if (filter === 1) {
-      document.getElementById('exp_' +  index).classList.add('scale-out-center');
-      setTimeout(() => {
-        this.expandedItemsFromBackend.splice(index, 1);
-      }, 600);
-    } else if (filter === 2) {
+  removeItem(index) {
       document.getElementById('mini_' +  index).classList.add('scale-out-center');
       setTimeout(() => {
         this.minimizedItemsFromBackend.splice(index, 1);
       }, 600);
-    }
   }
 
   transferElement(index, itemName, filter) {
@@ -58,14 +55,22 @@ export class DashboardComponent implements OnInit {
       document.getElementById('exp_' +  index).classList.add('slide-out-fwd-right');
       setTimeout(() => {
         this.expandedItemsFromBackend.splice(index, 1);
-        this.minimizedItemsFromBackend.unshift(itemName);
+        // this.minimizedItemsFromBackend.unshift(itemName);
       }, 600);
     } else if (filter === 2) {
-      document.getElementById('mini_' +  index).classList.add('slide-out-fwd-left');
-      setTimeout(() => {
-        this.minimizedItemsFromBackend.splice(index, 1);
+      if (this.expandedItemsFromBackend.indexOf(itemName) === -1) {
         this.expandedItemsFromBackend.unshift(itemName);
-      }, 600);
+      } else {
+        alert('Already Expanded');
+      }
+      // document.getElementById('mini_' +  index).classList.add('slide-out-fwd-left');
+      // setTimeout(() => {
+      //   this.minimizedItemsFromBackend.splice(index, 1);
+      // }, 600);
     }
+  }
+
+  test(eve) {
+    console.log(eve);
   }
 }

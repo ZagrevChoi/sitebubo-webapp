@@ -2,11 +2,42 @@
     border-radius: 50% !important;
 }
 .btn-toolbar {
-    background-color: #F6F7FB;
-    border-radius: 20px;
+    background-color: white;
+    &.header-expanded {
+        background-color: #F6F7FB !important;
+    }
+    &.seo-score {
+        background-color: #ff9948 !important;
+    }
+    &.domain-expire {
+        background-color: #ff8d4f !important;
+    }
+    &.full-report {
+        background-color: #b48cff !important;
+    }
+    &.site-speed {
+        background-color: #50bcf9 !important;
+    }
+    border-radius: 10px 10px 0px 0px;
     padding: 3px 5px;
     position: absolute;
-    top: -15px;
+    top: -19px;
     left: 40px;
-    z-index: 1
+    z-index: 1;
+    height: 20px;
+}
+.btn-radius {
+    border-radius: 20px !important;
+}
+.btn-purple {
+    background-color: #9079FC !important;
+}
+.btn-white {
+    background-color: white !important;
+}
+.btn-ored {
+    background-color: #fa5d65 !important;
+}
+.color-white {
+    color: white !important;
 }
