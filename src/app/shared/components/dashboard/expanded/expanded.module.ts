@@ -9,7 +9,6 @@ import { EuptimeComponent } from './euptime/euptime.component';
 import { EwordpressComponent } from './ewordpress/ewordpress.component';
 import { ButtonsModule } from '../../buttons/buttons.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-
 @NgModule({
   declarations: [
     EconversionRateComponent,
@@ -23,7 +22,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   imports: [
     CommonModule,
     ButtonsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    // BrowserAnimationsModule
   ],
   exports: [
     EconversionRateComponent,
