@@ -7,3 +7,19 @@ $fonts: 30;
   }
 }
 @include font-array;
+
+.color-red {
+  color: #bd0505 !important;
+}
+.color-grey {
+  color: #858585 !important;
+}
+.color-green {
+  color: #3f8727 !important;
+}
+.color-yellow {
+  color: #e9803d !important;
+}
+.color-blue {
+  color: #48b4fa !important;
+}

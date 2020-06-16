@@ -1,4 +1,4 @@
-$image-sizes: 10;
+$image-sizes: 40;
 @mixin image-size {
   @for $i from 0 through $image-sizes {
         .size-#{$i*10 + 10} { 
