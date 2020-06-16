@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   ]
   selectDomain = 'justgetvisible.com';
   minimizedItemsFromBackend = [
-    'seo-score', 'domain-expire', 'full-report' ,'wordpress','conversion-rate', 'site-speed'
+    'seo-score', 'domain-expire', 'full-report' ,'wordpress','conversion-rate', 'site-speed', 'visitors', 'email-check', 'mobile-friendly'
   ];
   expandedItemsFromBackend = [
     'conversion-rate', 'malware-check', 'site-speed',

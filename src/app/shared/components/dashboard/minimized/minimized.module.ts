@@ -8,6 +8,9 @@ import { MsiteSpeedComponent } from './msite-speed/msite-speed.component';
 import { MuptimeComponent } from './muptime/muptime.component';
 import { MwordpressComponent } from './mwordpress/mwordpress.component';
 import { MfullReportComponent } from './mfull-report/mfull-report.component';
+import { MemailCheckComponent } from './memail-check/memail-check.component';
+import { MvisitorsComponent } from './mvisitors/mvisitors.component';
+import { MmobileFriendlyComponent } from './mmobile-friendly/mmobile-friendly.component';
 
 
 
@@ -20,7 +23,10 @@ import { MfullReportComponent } from './mfull-report/mfull-report.component';
     MsiteSpeedComponent,
     MuptimeComponent,
     MwordpressComponent,
-    MfullReportComponent
+    MfullReportComponent,
+    MemailCheckComponent,
+    MvisitorsComponent,
+    MmobileFriendlyComponent
   ],
   imports: [
     CommonModule
@@ -33,7 +39,10 @@ import { MfullReportComponent } from './mfull-report/mfull-report.component';
     MsiteSpeedComponent,
     MuptimeComponent,
     MwordpressComponent,
-    MfullReportComponent
+    MfullReportComponent,
+    MemailCheckComponent,
+    MvisitorsComponent,
+    MmobileFriendlyComponent
   ]
 })
 export class MinimizedModule { }

@@ -131,6 +131,15 @@
                     <ng-template [ngIf]="item === 'full-report'">
                         <app-mfull-report></app-mfull-report>
                     </ng-template>
+                    <ng-template [ngIf]="item === 'email-check'">
+                        <app-memail-check></app-memail-check>
+                    </ng-template>
+                    <ng-template [ngIf]="item === 'visitors'">
+                        <app-mvisitors></app-mvisitors>
+                    </ng-template>
+                    <ng-template [ngIf]="item === 'mobile-friendly'">
+                        <app-mmobile-friendly></app-mmobile-friendly>
+                    </ng-template>
                 </div>
             </ng-container>
         </div>
