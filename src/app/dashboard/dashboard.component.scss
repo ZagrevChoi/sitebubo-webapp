@@ -1,8 +1,8 @@
 .options {
     display: flex;
     width: 100%;
-    height: 80px;
-    background-color: slateblue;
+    height: 90px;
+    background-color: #403466;
     .custom-ngselect {
         width: 80%;
     }
@@ -27,7 +27,7 @@
 .expanded-full {
     position: absolute;
     width: 100%;
-    height: calc(100% - 160px);
+    height: calc(100% - 200px) !important;
     padding: 20px;
     .minimize-button {
         z-index: 2;
