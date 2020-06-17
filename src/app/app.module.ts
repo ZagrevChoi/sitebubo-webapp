@@ -7,11 +7,14 @@ import { LayoutModule } from './layout/layout.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { LocalStorageModule } from 'angular-2-local-storage';
+
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingSpinnerComponent } from './shared/ui-kit/loading-spinner/loading-spinner.component';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -26,7 +29,11 @@ import { LoadingSpinnerComponent } from './shared/ui-kit/loading-spinner/loading
     AppRoutingModule,
     LayoutModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LocalStorageModule.forRoot({
+      prefix: environment.localStorage.prefix,
+      storageType: 'localStorage'
+    }),
   ],
   providers: [
     {
