@@ -11,12 +11,14 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingSpinnerComponent } from './shared/ui-kit/loading-spinner/loading-spinner.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,

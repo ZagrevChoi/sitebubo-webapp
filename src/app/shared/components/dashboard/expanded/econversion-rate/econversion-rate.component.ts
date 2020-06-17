@@ -5,16 +5,28 @@ export var multi = [
     "name": "Germany",
     "series": [
       {
-        "name": "1990",
-        "value": 62000000
+        "name": "2009",
+        "value": 62
       },
       {
         "name": "2010",
-        "value": 73000000
+        "value": 50
       },
       {
         "name": "2011",
-        "value": 89400000
+        "value": 94
+      },
+      {
+        "name": "2012",
+        "value": 21
+      },
+      {
+        "name": "2013",
+        "value": 41
+      },
+      {
+        "name": "2014",
+        "value": 11
       }
     ]
   },
@@ -23,47 +35,28 @@ export var multi = [
     "name": "USA",
     "series": [
       {
-        "name": "1990",
-        "value": 250000000
+        "name": "2009",
+        "value": 50
       },
       {
         "name": "2010",
-        "value": 309000000
+        "value": 90
       },
       {
         "name": "2011",
-        "value": 311000000
-      }
-    ]
-  },
-
-  {
-    "name": "France",
-    "series": [
-      {
-        "name": "1990",
-        "value": 58000000
+        "value": 71
       },
       {
-        "name": "2010",
-        "value": 50000020
+        "name": "2012",
+        "value": 51
       },
       {
-        "name": "2011",
-        "value": 58000000
-      }
-    ]
-  },
-  {
-    "name": "UK",
-    "series": [
-      {
-        "name": "1990",
-        "value": 57000000
+        "name": "2013",
+        "value": 11
       },
       {
-        "name": "2010",
-        "value": 62000000
+        "name": "2014",
+        "value": 31
       }
     ]
   }
@@ -77,7 +70,7 @@ export var multi = [
 export class EconversionRateComponent implements OnInit {
   
   multi = multi;
-  view: any[] = [700, 300];
+  view = [1000, 400]
 
   // options
   legend: boolean = true;
@@ -92,7 +85,7 @@ export class EconversionRateComponent implements OnInit {
   timeline: boolean = true;
 
   colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+    domain: ['#5AA454', '#E44D25']
   };
 
   @Output() expand = new EventEmitter<any>();
