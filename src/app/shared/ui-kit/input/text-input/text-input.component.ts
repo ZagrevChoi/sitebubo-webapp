@@ -19,6 +19,7 @@ export class TextInputComponent implements ControlValueAccessor {
   @Input() value;
   @Input() min;
   @Input() readonly;
+  @Input() font;
 
   onChange;
 

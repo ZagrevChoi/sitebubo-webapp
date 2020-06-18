@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 export var multi = [
   {
-    "name": "Germany",
+    "name": "Server 1",
     "series": [
       {
         "name": "2009",
@@ -32,7 +32,7 @@ export var multi = [
   },
 
   {
-    "name": "USA",
+    "name": "Server 2",
     "series": [
       {
         "name": "2009",
@@ -70,8 +70,6 @@ export var multi = [
 export class EconversionRateComponent implements OnInit {
   
   multi = multi;
-  view = [1000, 400]
-
   // options
   legend: boolean = true;
   showLabels: boolean = true;
