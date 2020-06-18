@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private toast: ToastService,
+    private toastService: ToastService,
     private authService: AuthService
   ) { }
 
@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
     try {
       this.isLoading = true;
       const value = this.loginForm.value;
-      
+      await this.authService.login(value.email, value.password).toPromise();
+      this.toastService.success(`You've successfully logged in.`);
     } catch {
-
+      this.toastService.danger(`Invalid email or password. Please try again.`);
     } finally {
-
+      this.isLoading = false;
     }
   }
 
