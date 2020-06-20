@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from '../../core/services/toast.service';
 import { AuthService } from '../../core/services/auth.service';
@@ -15,7 +14,6 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required ]
   });
   constructor(
-    private router: Router,
     private fb: FormBuilder,
     private toastService: ToastService,
     private authService: AuthService
@@ -31,7 +29,7 @@ export class LoginComponent implements OnInit {
       await this.authService.login(value.email, value.password).toPromise();
       this.toastService.success(`You've successfully logged in.`);
     } catch {
-      this.toastService.danger(`Invalid email or password. Please try again.`);
+      this.toastService.error(`Invalid email or password. Please try again.`);
     } finally {
       this.isLoading = false;
     }
