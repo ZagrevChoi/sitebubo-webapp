@@ -7,16 +7,21 @@ import { LayoutModule } from './layout/layout.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LocalStorageModule } from 'angular-2-local-storage';
+
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { environment } from 'src/environments/environment';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     LayoutModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LocalStorageModule.forRoot({
+      prefix: environment.localStorage.prefix,
+      storageType: 'localStorage'
+    }),
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {
