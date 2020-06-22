@@ -43,6 +43,13 @@ export class AuthService {
     }))
   }
 
+  signup(fullname: string, email: string, password: string): Observable<boolean> {
+    const url = `${environment.api}/auth/signup`;
+    return this.http.post<boolean>(url, { fullname, email, password }).pipe(tap(res => {
+      
+    }));
+  }
+
   logout() {
     this.accessToken = null;
     this.isLoggedIn$.next(this.isLoggedIn);
