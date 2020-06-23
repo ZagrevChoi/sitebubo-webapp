@@ -22,12 +22,26 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="row p-3">
-            <div class="col-md-3">
-            
+        <div class="row p-3 m-0">
+            <div class="col-md-4 col-3 col-sm-12 col-lg-3 d-flex flex-column  justify-content-around">
+                <div class="card background-purple mb-4 fit-content">
+                    <div class="card-body color-white">
+                        <p class="font-14">Goal Conversion Rate</p>
+                        <p class="font-28">0.0%</p>
+                        <p class="font-14">+0.00% (+--%)</p>
+                    </div>
+                </div>
+                <div class="card fit-content">
+                    <div class="card-body">
+                        <p class="font-14">Goal Conversion Rate</p>
+                        <p class="font-28">0.0%</p>
+                        <p class="font-14">+0.00% (+--%)</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8 col-9 col-sm-12 col-lg-9">
                 <ngx-charts-line-chart
+                    [view]="view"
                     [scheme]="colorScheme"
                     [legend]="legend"
                     [legendPosition]="'Below'"

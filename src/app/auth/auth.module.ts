@@ -7,9 +7,10 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputModule } from '../shared/ui-kit/input/input.module';
 import { SpinnerModule } from '../shared/ui-kit/spinner/loading-spinner/spinner.module';
+import { BrandComponent } from './brand/brand.component';
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent, VerifyEmailComponent],
+  declarations: [LoginComponent, SignupComponent, VerifyEmailComponent, BrandComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
