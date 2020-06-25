@@ -205,7 +205,7 @@ export class EconversionRateComponent implements OnInit {
   xAxisLabel: string = 'Year';
   yAxisLabel: string = 'Population';
   timeline: boolean = true;
-  view = [ 450 ]
+  view = []
 
   colorScheme = {
     domain: ['#5AA454', '#E44D25']

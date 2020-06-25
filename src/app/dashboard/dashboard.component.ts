@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -20,10 +23,12 @@ export class DashboardComponent implements OnInit {
   ];
 
   expandSelected: any;
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-
+    console.log(this.route.snapshot.data);
   }
 
   drop(event: CdkDragDrop<string[]>, target: string) {

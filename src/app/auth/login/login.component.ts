@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from '../../core/services/toast.service';
 import { AuthService } from '../../core/services/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private toastService: ToastService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +31,7 @@ export class LoginComponent implements OnInit {
       const value = this.loginForm.value;
       await this.authService.login(value.email, value.password).toPromise();
       this.toastService.success(`You've successfully logged in.`);
+      this.router.navigate(['/dashboard']);
     } catch {
       this.toastService.error(`Invalid email or password. Please try again.`);
     } finally {
