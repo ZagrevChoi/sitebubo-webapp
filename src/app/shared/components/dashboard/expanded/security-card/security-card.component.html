@@ -1,0 +1,12 @@
+<div class="card d-flex flex-row overflow-hidden">
+    <div class="d-flex flex-column category-wrapper p-2">
+        <div class="img-wrapper pb-2">
+            <img [src]="imgUrl" alt="">
+        </div>
+        <span>Malware/Antivirus Check</span>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center text-white status-wrapper">
+        <fa-icon class="font-24" [icon]="status ? faCheckCircle : faTimesCircle"></fa-icon>
+        <span>Clean Site</span>
+    </div>
+</div>

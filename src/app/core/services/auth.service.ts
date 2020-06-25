@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { LoginResponse, User } from '../models/auth';
 import { environment } from 'src/environments/environment';
-
+import { Md5 } from 'ts-md5';
 @Injectable({
   providedIn: 'root'
 })
@@ -36,15 +36,19 @@ export class AuthService {
   ) { }
 
 
-  login(email: string, password: string): Observable<LoginResponse> {
-    const url = `${environment.api}/auth/login`;
+  login(email: string, passwordTemp: string): Observable<LoginResponse> {
+    let password = Md5.hashStr(passwordTemp);
+    const url = `${environment.api}login`;
     return this.http.post<LoginResponse>(url, { email, password }).pipe(tap(res => {
-      
+      if (res) {
+        this.authenticateUser(res.token);
+      }
     }))
   }
 
-  signup(fullname: string, email: string, password: string): Observable<boolean> {
-    const url = `${environment.api}/auth/signup`;
+  signup(fullname: string, email: string, passwordTemp: string): Observable<boolean> {
+    let password = Md5.hashStr(passwordTemp);
+    const url = `${environment.api}signup`;
     return this.http.post<boolean>(url, { fullname, email, password }).pipe(tap(res => {
       
     }));
@@ -59,7 +63,7 @@ export class AuthService {
   }
 
   forgetPassword(email: string): Observable<any> {
-    const url = `${environment.api}/auth/forgot-password`;
+    const url = `${environment.api}forgot-password`;
     return this.http.post(url, { email });
   }
 

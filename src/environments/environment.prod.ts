@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  api: 'https://webapp.sitebubo.com',
+  api: 'https://api.sitebubo.com/webapi/public/api/',
   localStorage: {
     prefix: 'sitebubo',
     accessToken: 'access_token',

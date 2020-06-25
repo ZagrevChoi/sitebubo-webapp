@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://webapp.sitebubo.com',
+  api: 'https://api.sitebubo.com/webapi/public/api/',
   localStorage: {
     prefix: 'sitebubo',
     accessToken: 'access_token',
@@ -12,7 +12,7 @@ export const environment = {
   }
 };
 
-/*
+/*https://api.sitebubo.com/webapi/public/api/login
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *

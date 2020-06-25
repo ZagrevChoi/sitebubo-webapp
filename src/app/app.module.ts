@@ -17,25 +17,27 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { environment } from 'src/environments/environment';
 import { ToastrModule } from 'ngx-toastr';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    LayoutModule,
     NgbModule,
+    LayoutModule,
     BrowserAnimationsModule,
     LocalStorageModule.forRoot({
       prefix: environment.localStorage.prefix,
       storageType: 'localStorage'
     }),
     NgxSpinnerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [
     {
