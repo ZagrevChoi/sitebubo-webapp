@@ -17,7 +17,7 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const duplicate  = request.clone({ headers: request.headers.set('Authorization', this.authService.accessToken ? this.authService.accessToken: '' ) })
+    const duplicate  = request.clone({ headers: request.headers.set('Authorization', this.authService.accessToken ? 'Bearer ' + this.authService.accessToken: '' ) })
     return next.handle(duplicate).pipe(
       catchError(err => {
         if (err.status === 401) {

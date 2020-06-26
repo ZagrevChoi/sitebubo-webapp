@@ -10,13 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-
   domains = [
     'justgetvisible.com', 'sitebubo.com', 'youtube.com'
   ]
   selectDomain = 'justgetvisible.com';
   minimizedItemsFromBackend = [
-    'seo-score', 'domain-expire','site-speed', 'full-report' ,'wordpress','conversion-rate', 'visitors', 'email-check', 'mobile-friendly'
+    'seo-score', 'domain-expire','site-speed', 'full-report' , 'wordpress','conversion-rate', 'visitors', 'email-check', 'mobile-friendly'
   ];
   expandedItemsFromBackend = [
     'conversion-rate', 'malware-check', 'site-speed',

@@ -15,4 +15,10 @@ export class LoadingSpinnerComponent implements OnInit {
     this.spinner.show();
   }
 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.spinner.hide();
+  }
+
 }

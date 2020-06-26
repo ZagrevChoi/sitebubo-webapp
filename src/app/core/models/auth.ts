@@ -1,13 +1,10 @@
-export interface Auth {
-
-}
-
 export interface User {
-    user_id: number;
-    email: string;
-    fullname: string;
-    avatar?: string;
-    isEmailVerified?: boolean
+    id: number,
+    avatar?: string,
+    verified: boolean,
+    new_user: boolean,
+    name: string,
+    email: string
 }
 
 export interface LoginResponse {

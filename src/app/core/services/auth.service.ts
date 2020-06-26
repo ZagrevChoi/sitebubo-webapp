@@ -68,21 +68,21 @@ export class AuthService {
   }
 
   resetPassword(password: string, resetToken: string): Observable<any> {
-    const url = `${environment.api}/auth/reset-password`;
+    const url = `${environment.api}auth/reset-password`;
     return this.http.post(url, {password, resetToken});
   }
 
   changePassword(oldPassword: string, newPassword: string): Observable<any> {
-    const url = `${environment.api}/auth/change-password`;
+    const url = `${environment.api}auth/change-password`;
     return this.http.post(url, {oldPassword, newPassword});
   }
 
   verifyEmail(verifyToken: string): Observable<any> {
-    const url = `${environment.api}/auth/verify`;
+    const url = `${environment.api}auth/verify`;
     return this.http.post(url, {verifyToken}).pipe(
       tap(() => {
         if (this.user) {
-          this.user.isEmailVerified = true;
+          this.user.verified = true;
           this.user$.next(this.user);
         }
       })
@@ -94,10 +94,11 @@ export class AuthService {
     return this.http.post(url, null);
   }
 
-  getAuth(): Observable<User> {
-    const url = `${environment.api}/auth`;
-    return this.http.get<User>(url).pipe(
+  getAuth(): Observable<any> {
+    const url = `${environment.api}user/getuserdetails`;
+    return this.http.get<any>(url).pipe(
       tap(res => {
+        console.log(res);
         this.user = res;
         this.user$.next(this.user);
       })
