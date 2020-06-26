@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { Auth } from 'src/app/core/models/auth';
+
 
 @Component({
   selector: 'app-signup',

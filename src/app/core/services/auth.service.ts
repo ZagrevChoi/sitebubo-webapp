@@ -7,6 +7,9 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { LoginResponse, User } from '../models/auth';
 import { environment } from 'src/environments/environment';
 import { Md5 } from 'ts-md5';
+
+import { DomainService } from './domain.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,7 +35,8 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private localStorage: LocalStorageService,
-    private router: Router
+    private router: Router,
+    private domainService: DomainService
   ) { }
 
 
@@ -57,9 +61,11 @@ export class AuthService {
   logout() {
     this.accessToken = null;
     this.isLoggedIn$.next(this.isLoggedIn);
-    this.user = null;
-    this.user$.next(this.user);
-    this.router.navigate(['']);
+    this.domainService.refresh(this.isLoggedIn).then(() => {
+      this.user = null;
+      this.user$.next(this.user);
+      this.router.navigate(['']);
+    });
   }
 
   forgetPassword(email: string): Observable<any> {

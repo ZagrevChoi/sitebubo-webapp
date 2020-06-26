@@ -1,12 +1,7 @@
 import { environment } from './../../../environments/environment.prod';
 import { tap } from 'rxjs/operators';
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LocalStorageService } from 'angular-2-local-storage';
-
-import { AuthService } from 'src/app/core/services/auth.service';
-
 import { DomainInfo } from './../models/domain';
 import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
@@ -17,21 +12,20 @@ export class DomainService {
   domainInfo$: BehaviorSubject<DomainInfo> = new BehaviorSubject<DomainInfo>(this.domainInfo);
 
   constructor(
-    private http: HttpClient,
-    private localStorage: LocalStorageService,
-    private router: Router,
-    private authService: AuthService
+    private http: HttpClient
   ) { }
 
-  refresh(): any {
-    const isLoggedIn = this.authService.isLoggedIn$;
-    if (isLoggedIn) {
-      return this.getDomainInfoByUserId().toPromise();
-    } else {
-      this.domainInfo = null;
-      this.domainInfo$.next(this.domainInfo);
-      return null;
-    }
+  refresh(isLoggedIn): any {
+    return new Promise((resolve) => {
+      if (isLoggedIn) {
+        const result = this.getDomainInfoByUserId().toPromise();
+        resolve(result);
+      } else {
+        this.domainInfo = null;
+        this.domainInfo$.next(this.domainInfo);
+        resolve(null);
+      }
+    });
   }
 
   getDomainInfoByUserId(): Observable<DomainInfo> {
