@@ -4,7 +4,8 @@ export interface User {
     verified: boolean,
     new_user: boolean,
     name: string,
-    email: string
+    email: string,
+    terms: boolean
 }
 
 export interface LoginResponse {

@@ -100,11 +100,10 @@ export class AuthService {
     return this.http.post(url, null);
   }
 
-  getAuth(): Observable<any> {
+  getAuth(): Observable<User> {
     const url = `${environment.api}user/getuserdetails`;
-    return this.http.get<any>(url).pipe(
+    return this.http.get<User>(url).pipe(
       tap(res => {
-        console.log(res);
         this.user = res;
         this.user$.next(this.user);
       })

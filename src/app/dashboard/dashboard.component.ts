@@ -1,7 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ActivatedRoute } from '@angular/router';
 
+import { DashboardService } from './../core/services/dashboard.service';
+import { DomainService } from './../core/services/domain.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,11 +26,29 @@ export class DashboardComponent implements OnInit {
 
   expandSelected: any;
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private domainService: DomainService,
+    private dashboardService: DashboardService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.data);
+    this.getDomainInfo();
+  }
+
+  getDomainInfo() {
+    this.domainService.getDomainInfoByUserId().subscribe((res) => {
+      if (res) {
+        console.log(res);
+      } else {
+        
+      }
+    }, err => {
+
+    });
+  }
+
+  changeMonitorOrders() {
+
   }
 
   drop(event: CdkDragDrop<string[]>, target: string) {
