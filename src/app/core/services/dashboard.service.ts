@@ -9,4 +9,8 @@ export class DashboardService {
   constructor(
     private http: HttpClient
   ) { }
+
+  getMonitorInfo() {
+    
+  }
 }

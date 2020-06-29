@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { DashboardService } from './../core/services/dashboard.service';
 import { DomainService } from './../core/services/domain.service';
+import { domain } from 'process';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,10 +14,8 @@ import { DomainService } from './../core/services/domain.service';
 })
 export class DashboardComponent implements OnInit {
 
-  domains = [
-    'justgetvisible.com', 'sitebubo.com', 'youtube.com'
-  ]
-  selectDomain = 'justgetvisible.com';
+  domains: Array<object>
+  selectDomain: any;
   minimizedItemsFromBackend = [
     'seo-score', 'domain-expire','site-speed', 'full-report' , 'wordpress','conversion-rate', 'visitors', 'email-check', 'mobile-friendly'
   ];
@@ -32,18 +31,19 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getDomainInfo();
+    
   }
 
-  getDomainInfo() {
-    this.domainService.getDomainInfoByUserId().subscribe((res) => {
-      if (res) {
-        console.log(res);
-      } else {
-        
-      }
-    }, err => {
-
+  getDomainList(): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this.domainService.getDomainInfoByUserId().toPromise().then(() => {
+        console.log(this.domainService.domainInfo);
+        this.domains = this.domainService.domainInfo.domain_info.map((category) => ({
+          value: category.domain_id,
+          label: category.domain_name
+        }));
+        this.selectDomain = this.domains[0];
+      });
     });
   }
 

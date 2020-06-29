@@ -1,4 +1,4 @@
 export interface DomainInfo {
-    domainInfo: Array<any>,
+    domain_info: Array<any>,
     subscription_plan: Object
 }
