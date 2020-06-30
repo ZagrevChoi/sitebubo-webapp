@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
     'seo-score', 'domain-expire','site-speed', 'full-report' , 'wordpress','conversion-rate', 'visitors', 'email-check', 'mobile-friendly'
   ];
   expandedItemsFromBackend = [
-    'conversion-rate', 'malware-check', 'site-speed',
+    'server-monitor','conversion-rate', 'malware-check', 'site-speed',
   ];
 
   expandSelected: any;

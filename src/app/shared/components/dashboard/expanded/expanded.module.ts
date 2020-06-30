@@ -11,6 +11,9 @@ import { EwordpressComponent } from './ewordpress/ewordpress.component';
 import { ButtonsModule } from '../../buttons/buttons.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SecurityCardComponent } from './security-card/security-card.component';
+import { EserverMonitorComponent } from './eserver-monitor/eserver-monitor.component';
+
+import { RoundProgressModule } from './../../../ui-kit/round-progress/round-progress.module';
 @NgModule({
   declarations: [
     EconversionRateComponent,
@@ -21,12 +24,14 @@ import { SecurityCardComponent } from './security-card/security-card.component';
     EuptimeComponent,
     EwordpressComponent,
     SecurityCardComponent,
+    EserverMonitorComponent,
   ],
   imports: [
     CommonModule,
     ButtonsModule,
     NgxChartsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RoundProgressModule
     // BrowserAnimationsModule
   ],
   exports: [
@@ -37,6 +42,7 @@ import { SecurityCardComponent } from './security-card/security-card.component';
     EsiteSpeedComponent,
     EuptimeComponent,
     EwordpressComponent,
+    EserverMonitorComponent
   ]
 })
 export class ExpandedModule { }
