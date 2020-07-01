@@ -14,6 +14,8 @@ import { SecurityCardComponent } from './security-card/security-card.component';
 import { EserverMonitorComponent } from './eserver-monitor/eserver-monitor.component';
 
 import { RoundProgressModule } from './../../../ui-kit/round-progress/round-progress.module';
+import { ChartsModule } from './../../../ui-kit/charts/charts.module';
+
 @NgModule({
   declarations: [
     EconversionRateComponent,
@@ -31,7 +33,8 @@ import { RoundProgressModule } from './../../../ui-kit/round-progress/round-prog
     ButtonsModule,
     NgxChartsModule,
     FontAwesomeModule,
-    RoundProgressModule
+    RoundProgressModule,
+    ChartsModule
     // BrowserAnimationsModule
   ],
   exports: [

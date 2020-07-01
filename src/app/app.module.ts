@@ -19,9 +19,6 @@ import { environment } from 'src/environments/environment';
 import { ToastrModule } from 'ngx-toastr';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent
